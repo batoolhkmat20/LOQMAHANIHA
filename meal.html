@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>لقمه هنيّة</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="C:\Users\XPRISTO\Desktop\LUQMA\meal.css" rel="stylesheet">
+
+
+  
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+  
+     
+      <a class="btn-getstarted" href="index.html#book-a-table">اطلب الآن</a>
+
+  
+      <!-- قائمة التنقل -->
+      <nav id="navmenu" class="navmenu mx-auto">
+        <ul class="d-flex align-items-center gap-4">
+          <li><a href="#contact" class="active">تواصل معنا</a></li>
+          <li><a href="#menu">القائمة</a></li>
+          <li class="dropdown">
+            <a href="#">الاقسام</a>
+            <ul class="dropdown-content">
+              <li><a href=login/user.html>تسجيل دخول</a></li> 
+              <li><a href=login/chef.html>بوابة الطهاة</a></li>   
+           
+              <li><a href=chefs.html>الطهاة </a></li>
+              <li><a href="meal.html">الاطباق </a></li>
+              
+
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+  
+  
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">لقمة هنيّة</h1>
+      </a>
+    </div>
+  </header>
+  
+  
+    </section>
+    <div class="container my-4" dir="rtl">
+      <!-- فلتر السعر -->
+      <div class="d-flex justify-content-between mb-3">
+        <label for="priceFilter" class="fw-bold">فلتر السعر</label>
+        <select id="priceFilter" class="form-select" style="width: 200px;">
+          <option value="all">جميع الأسعار</option>
+          <option value="5">أقل من ٥ د.أ</option>
+          <option value="10">أقل من ١٠ د.أ</option>
+          <option value="15">أقل من ١٥ د.أ</option>
+        </select>
+      </div>
+    
+      <!-- الوجبة -->
+      <div class="card shadow-sm rounded-3 p-3 meal-card" data-price="7.00">
+        <div class="row align-items-center">
+          <!-- تفاصيل الوجبة -->
+          <div class="col-md-4 mb-3 mb-md-0">
+            <img src="assets/img/mansef.jpg" class="img-fluid rounded-3" alt="منسف أردني">
+          </div>
+    
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">اسم الوجبة: منسف أردني</h5>
+            <p class="text-muted mb-1">وصف: أرز ولحم مطبوخ مع الجميد ومزين بالمكسرات</p>
+           <!-- ✅ السعر -->
+      <p class="price-area mb-0">
+        <span class="text-danger text-decoration-line-through old-price d-none"></span>
+        <span class="text-primary fw-semibold new-price"></span>
+        <span class="text-success fw-bold discount-label d-none ms-2"></span>
+      </p>
+          </div>
+        </div>
+         <!-- و checkbox -->
+  <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
+    <input type="checkbox" class="form-check-input meal-checkbox" id="mansafCheckbox" data-price="7.00">
+    <label class="btn btn-outline-primary mb-0" for="mansafCheckbox">أضف إلى السلة</label>
+  </div>
+</div>
+        <!-- زر "اطلب الآن" -->
+        <div class="text-center mt-3">
+          <a class="btn-getstarted" href="index.html#book-a-table">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cart mt-4 text-end fw-bold">
+      المجموع الكلي: <span id="totalPrice">٠٫٠٠</span> د.أ
+    </div>
+      
+</main>
+
+
+<footer id="footer" class="footer dark-background">
+
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div class="address">
+          <h4>العنوان</h4>
+          <p>الاردن  </p>
+          <p> عمان </p>
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4>لتواصل</h4>
+          <p>
+            <strong>الهاتف:</strong> <span>+1 5589 55488 55</span><br>
+            <strong>الايميل:</strong> <span>info@example.com</span><br>
+          </p>
+        </div>
+      </div>
+
+     
+
+      <div class="col-lg-3 col-md-6">
+        <h4> تواصل معنا</h4>
+        <div class="social-links d-flex">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">لقمه شهيّة</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+     
+      Designed by <a href="[#]">groub 3</a>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Main JS File -->
+
+
+<script src="assets/js/main.js"></script>
+<script src="meal.js"></script>
+
+
+
+</body>
+
+</html>

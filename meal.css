@@ -1,0 +1,17 @@
+
+     
+        .btn-getstarted {
+          display: inline-block;
+          background-color: #cc0014; /* اللون الأحمر */
+          color: white;
+          padding: 10px 25px; /* المساحة حول النص */
+          font-size: 16px;
+          border-radius: 50px; /* حواف دائرية */
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+        }
+      
+        .btn-getstarted:hover {
+          background-color: #c82333; /* اللون عند التمرير */
+        }
+    
