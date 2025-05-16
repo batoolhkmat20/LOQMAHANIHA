@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Toggle between register and login
 
 
@@ -92,3 +93,20 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         phoneError.style.display = 'none'; // إخفاء الرسالة إذا صحيح
     }
 });
+=======
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
+
+registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
+});
+
+
+// fsefefsfs
+// JS
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9

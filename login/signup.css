@@ -32,7 +32,11 @@ body {
     overflow: hidden;
     width: 768px;
     max-width: 100%;
+<<<<<<< HEAD
     min-height: 575px;
+=======
+    min-height: 550px;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
     
 }
 
@@ -44,7 +48,11 @@ body {
 }
 
 .container span{
+<<<<<<< HEAD
     font-size: 13px;
+=======
+    font-size: 12px;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 }
 
 .container a{
@@ -67,12 +75,15 @@ body {
     margin-top: 10px;
     cursor: pointer;
 }
+<<<<<<< HEAD
 .container button:hover {
     background-color: #a80f0f; 
     color: #fff;
     transform: scale(1.08);
     transition: all 0.35s ease;
 }
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 
 .container button.hidden{
     background-color: transparent;
@@ -85,7 +96,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+<<<<<<< HEAD
     padding: 0 29px;
+=======
+    padding: 0 40px;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
     height: 95%;
 }
 
@@ -94,7 +109,11 @@ body {
     border: none;
     margin: 6px 0;
     padding: 10px 15px;
+<<<<<<< HEAD
     font-size: 12px;
+=======
+    font-size: 13px;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
     border-radius: 12px;
     width: 100%;
     outline: none;
@@ -148,8 +167,13 @@ body {
 }
 
 .social-icons a{
+<<<<<<< HEAD
     border: 1px solid #cccccc;
     border-radius: 25%;
+=======
+    border: 1px solid #ccc;
+    border-radius: 20%;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -157,6 +181,7 @@ body {
     width: 40px;
     height: 40px;
 }
+<<<<<<< HEAD
 .social-icons a:hover {
     background-color: #ce1212;
     color: #fff;
@@ -164,28 +189,48 @@ body {
     border-color: #ce1212;
     transition: all 0.35s ease;
 }
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 
 .toggle-container{
     position: absolute;
     top: 0;
+<<<<<<< HEAD
     left:50%;
     width:50%;
     height: 100%;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
     border-radius:200px 0 0 450px;
+=======
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius:150px 0 0 150px;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
     z-index: 1000;
 }
 
 .container.active .toggle-container{
+<<<<<<< HEAD
     transform: translateX(-110%);
     border-radius: 0 450px 200px 0;
+=======
+    transform: translateX(-100%);
+    border-radius: 0 150px 150px 0;
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 }
 
 .toggle{
     background-color: #64a82d;
     height: 100%;
+<<<<<<< HEAD
     background: linear-gradient(to right, #d8a218, #ce1212);
+=======
+    background: linear-gradient(to right, #c37425, #ce1212);
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
     color: #fff;
     position: relative;
     left: -100%;
@@ -242,11 +287,14 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     font-family: 'Cairo', sans-serif;
   }
+<<<<<<< HEAD
 
   .logo {
     display: flex;
     align-items: center;
   }
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
   
   .logo h1 {
     margin: 0;
@@ -264,7 +312,10 @@ body {
     gap: 20px;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
   }
   
   .navmenu ul li a {
@@ -272,12 +323,16 @@ body {
     color: #333;
     font-weight: 500;
     transition: color 0.3s;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
   }
   
   .navmenu ul li a:hover,
   .navmenu ul li a.active {
     color: #d32f2f;
+<<<<<<< HEAD
   
   }
     
@@ -536,3 +591,8 @@ body {
 
 
 }
+=======
+  }
+    
+
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9

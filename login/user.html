@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="ar">
+=======
+<html lang="en">
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +14,7 @@
     <title>لقمة هنية</title>
 </head>
 
+<<<<<<< HEAD
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Check for both login and sign-up errors
@@ -49,6 +54,8 @@
   </script>
   
 
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 <body>
     
     <header class="header">
@@ -57,9 +64,16 @@
         </div>
         <nav class="navmenu">
           <ul>
+<<<<<<< HEAD
             <li><a href="/LUQMA/chefAndMeal/chefs.php">الطهاة</a></li>
            <li><a href="../index.php">الرئيسية</a></li>
             <li><a href="/luqma/login/chef.html" class="active">تسجيل الدخول كطاه</a></li>
+=======
+            <li><a href="/index.html">الرئيسية</a></li>
+            <li><a href="/login/chef.html">الطهاة</a></li>
+            <li><a href="../index.html#menu">الأطباق</a></li>
+            <li><a href="/login/user.html" class="active">تسجيل الدخول</a></li>
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
           </ul>
         </nav>
       </header>
@@ -68,13 +82,23 @@
         <div class="container" id="container">
             <!-- Sign Up Form -->
             <div class="form-container sign-up">
+<<<<<<< HEAD
               <form id="signup-form" method="POST" action="PHP/user_signup.php">
                 <h2>إنشاء حساب جديد</h2>
+=======
+                <form action="/signup" method="POST">
+                    <h2>إنشاء حساب جديد</h2>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
                     
                     <label for="signup-name">الاسم</label>
                     <input type="text" id="signup-name" name="name" placeholder="الاسم" required>
 
                     <label for="signup-phone">رقم الهاتف</label>
+<<<<<<< HEAD
                     <input type="tel" id="signup-phone" name="phone" placeholder="أدخل رقم الهاتف (10 أرقام)" required pattern="\d{10}" maxlength="10">
                     
                     <label for="signup-email">البريد الإلكتروني</label>
@@ -88,12 +112,23 @@
                       </span>
                     </div>
                         
+=======
+                    <input type="tel" id="signup-phone" name="phone" placeholder="رقم الهاتف" required>
+                    
+                    <label for="signup-email">ايميل</label>
+                    <input type="email" id="signup-email" name="email" placeholder="ايميل" required>
+    
+                    <label for="signup-password">كلمة السر</label>
+                    <input type="password" id="signup-password" name="password" placeholder="كلمة السر" required>
+    
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
                     <button type="submit">إنشاء حساب </button>
                 </form>
             </div>
     
             <!-- Sign In Form -->
             <div class="form-container sign-in">
+<<<<<<< HEAD
               <form method="POST" action="PHP/user_login.php">
                 <h2>تسجيل الدخول</h1>
     
@@ -109,6 +144,23 @@
                     </div>
                         
                     <a href="/luqma/login/php/forgot_password/forgot-password.php">نسيت كلمة السر؟</a>
+=======
+                <form action="/login" method="POST">
+                    <h2>تسجيل الدخول</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                   
+    
+                    <label for="signin-email">ايميل</label>
+                    <input type="email" id="signin-email" name="email" placeholder="ايميل" required>
+    
+                    <label for="signin-password">  كلمة السر </label>
+                    <input type="password" id="signin-password" name="password" placeholder="كلمة السر" required>
+    
+                    <a href="#">نذكر كلمة السر؟</a>
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
                     <button type="submit">تسجيل الدخول</button>
                 </form>
             </div>
@@ -122,7 +174,11 @@
                         <button class="hidden" id="login">تسجيل الدخول</button>
                     </div>
                     <div class="toggle-panel toggle-right">
+<<<<<<< HEAD
                         <h1>   مرحبًا بكم في لقمة هنيّة </h1>
+=======
+                        <h1>مرحباً يا صديقي!</h1>
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
                          <p>سجل بياناتك للبدء في رحلتك معنا</p>
                         <button class="hidden" id="register">إنشاء حساب جديد</button>
                     </div>
@@ -132,6 +188,7 @@
       </main>
     </body>
     
+<<<<<<< HEAD
     <footer class="footer">
         <div class="footer-content">
           <div class="footer-section contact-info">
@@ -197,5 +254,10 @@ transition: opacity 0.3s ease-in-out;
 
 
   </body>
+=======
+
+    <script src="signup.js"></script>
+</body>
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
 
 </html>

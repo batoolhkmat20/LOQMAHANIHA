@@ -4,6 +4,7 @@ Template Name: Yummy
 Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
 Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
+<<<<<<< HEAD
 
 
 
@@ -153,3 +154,5 @@ $notifications = $stmt_notifications->fetchAll();
                              title="اضغط لتغيير الصورة">
                     </label>
                 </form>
+=======
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9

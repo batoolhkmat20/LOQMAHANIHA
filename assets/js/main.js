@@ -173,5 +173,9 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+<<<<<<< HEAD
 })();
 
+=======
+})();
+>>>>>>> 026c1d8a75c7064739d73a2728452725095720b9
