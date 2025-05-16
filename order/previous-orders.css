@@ -1,0 +1,325 @@
+/* الخطوط والألوان الأساسية */
+:root {
+  --default-font: "Segoe UI", sans-serif;
+  --heading-font: "Amatic SC", sans-serif;
+  --nav-font: "Inter", sans-serif;
+  --background-color: #ffffff; /* تحديث اللون */
+  --default-color: #212529; /* تحديث اللون */
+  --heading-color: #37373f; /* تحديث اللون */
+  --accent-color: #ce1212; /* تحديث اللون */
+  --contrast-color: #ffffff; /* تحديث اللون */
+  --light-gray: #ecf0f1;
+  --mid-gray: #bdc3c7;
+  --hover-accent: #c0392b;
+  --secondary-color: #2980b9;
+  --success-color: #27ae60;
+}
+
+/* الجسم والخلفية */
+body {
+  font-family: var(--default-font);
+  background-color: var(--background-color);
+  padding: 50px;
+  padding-top: 5px;
+  margin: 0; /* تأكد من إزالة الهامش الافتراضي */
+}
+
+/* تنسيق الحاوية */
+.container {
+  background: var(--contrast-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تعديل الهامش للمسافات */
+.mt-5 {
+  margin-top: 20px; /* تقليل المسافة */
+}
+
+/* العناوين */
+h2, h3 {
+  color: var(--heading-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ===== تحسين تنسيق الجدول Modern ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  background-color: var(--contrast-color);
+  table-layout: auto; /* إضافة هذه الخاصية لتجنب التمدد */
+}
+
+table thead {
+  background: var(--accent-color);
+}
+
+table thead th {
+  color: var(--contrast-color) !important;
+  font-weight: bold;
+  padding: 14px 12px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+table tbody td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--default-color);
+  vertical-align: middle;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+table tbody tr:hover {
+  background-color: #f2f7fc;
+  transition: background-color 0.3s ease-in-out;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+/* حقل الكمية */
+input[type="number"] {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid var(--mid-gray);
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* الأزرار العامة */
+button,
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* زر تأكيد الطلب */
+#confirmOrderBtn {
+  background-color: var(--success-color);
+  color: var(--contrast-color);
+  border: none;
+}
+
+#confirmOrderBtn:hover {
+  background-color: #2ecc71;
+}
+
+/* زر حذف الطلبات */
+#clearOrdersBtn {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+}
+
+#clearOrdersBtn:hover {
+  background-color: var(--hover-accent);
+}
+
+/* زر إضافة المزيد */
+#addMoreBtn {
+  background-color: var(--secondary-color);
+  color: var(--contrast-color);
+  border: none;
+}
+
+#addMoreBtn:hover {
+  background-color: #3498db;
+}
+
+/* تنسيق المجموع */
+.fw-bold {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text-end {
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* الطلبات السابقة */
+#previousOrderList {
+  margin-top: 20px;
+}
+
+.order-item {
+  background-color: var(--light-gray);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-right: 4px solid var(--accent-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+.order-card {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border-right: 5px solid var(--accent-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.order-card:hover {
+  box-shadow: 0 0 12px rgba(206, 18, 18, 0.3);
+}
+
+.order-card h5 {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* زر المزيد من التفاصيل */
+.more-details-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.more-details-btn:hover {
+  background: var(--hover-accent);
+}
+
+/* الهيدر */
+header.header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 15px 0;
+}
+
+header a {
+  text-decoration: none !important;
+  color: var(--text-color);
+}
+
+header .logo h1 {
+  font-size: 30px;
+  font-family: 'Amatic SC', sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  text-decoration: none;
+}
+
+header .logo:hover {
+  color: var(--hover-accent);
+}
+
+header .navbar {
+  padding: 0;
+}
+
+header .navbar-nav .nav-link {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+header .navbar-nav .nav-link:hover {
+  background-color: var(--hover-color);
+  color: var(--hover-accent);
+  border-radius: 5px;
+}
+
+header .navbar-toggler-icon {
+  background-color: var(--text-color);
+}
+
+header .btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+header .btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--hover-accent);
+}
+
+header .cart-icon {
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+header .cart-icon:hover {
+  color: var(--hover-accent);
+}
+
+/* التنبيهات */
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  font-size: 18px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.custom-alert.show {
+  display: block;
+}
+
+.custom-alert.d-none {
+  display: none;
+}
+
+.custom-alert button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #ffc107;
+  color: #000;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-alert button:hover {
+  background-color: #e0a800;
+}
+
+/* تنسيق المستخدم */
+#userActions {
+  color: var(--hover-accent);
+  font-family: var(--heading-font);
+  font-size: 20px;
+  padding: 8px 18px;
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: bold;
+  animation: fadeInWelcome 0.6s ease-in-out;
+  transition: background-color 0.3s ease;
+}

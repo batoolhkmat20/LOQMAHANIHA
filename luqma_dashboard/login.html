@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="admin singup CSS.css">
+    <title>لوحة تحكم الأدمن - لقمة هنية</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>لقمة <span>هنية</span></h1>
+        </div>
+        <nav class="navmenu">
+            <ul>
+                <li><a href="/index.html">الرئيسية</a></li>
+                <li><a href="/login/chef.html">الطهاة</a></li>
+                <li><a href="../index.html#menu">الأطباق</a></li>
+                <li><a href="/login/admin.html" class="active">أدمن</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container" id="container">
+            <!-- Sign Up Form -->
+            <div class="form-container sign-up">
+                <form action="/admin/signup" method="POST">
+                    <h2>إنشاء حساب أدمن</h2>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <label for="signup-name">الاسم</label>
+                    <input type="text" id="signup-name" name="name" placeholder="الاسم" required>
+                    <label for="signup-phone">رقم الهاتف</label>
+                    <input type="tel" id="signup-phone" name="phone" placeholder="رقم الهاتف" required>
+                    <label for="signup-email">ايميل</label>
+                    <input type="email" id="signup-email" name="email" placeholder="ايميل" required>
+                    <label for="signup-password">كلمة السر</label>
+                    <input type="password" id="signup-password" name="password" placeholder="كلمة السر" required>
+                    <button type="submit">إنشاء حساب أدمن</button>
+                </form>
+            </div>
+            <!-- Sign In Form -->
+            <div class="form-container sign-in">
+                <form action="/admin/login" method="POST" id="loginForm">
+                    <h2>تسجيل دخول الأدمن</h2>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <label for="signin-email">ايميل الأدمن</label>
+                    <input type="email" id="username" name="email" placeholder="ايميل" required>
+                    <label for="signin-password">كلمة السر</label>
+                    <input type="password" id="password" name="password" placeholder="كلمة السر" required>
+                    <a href="#">نسيت كلمة السر؟</a>
+                    <button type="submit">تسجيل الدخول</button>
+                </form>
+            </div>
+            <!-- Toggle Panel -->
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>أهلاً بك مجددًا</h1>
+                        <p>قم بتسجيل الدخول إلى لوحة التحكم الخاصة بالأدمن</p>
+                        <button class="hidden" id="login">تسجيل الدخول</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>مرحباً أيها الأدمن!</h1>
+                        <p>قم بإنشاء حساب جديد للوصول إلى لوحة التحكم</p>
+                        <button class="hidden" id="register">إنشاء حساب أدمن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="admin signup JS.js"></script>
+</body>
+
+</html>

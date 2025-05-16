@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="dashboard CSS.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li onclick="showSection('overview')">Overview</li>
+      <li onclick="showSection('customers')">Customers</li>
+      <li onclick="showSection('chiefs')">Chiefs</li>
+      <li onclick="showSection('orders')">Orders</li>
+      <li onclick="showSection('ratings')">Ratings</li>
+      <li onclick="showSection('complaints')">Complaints</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div id="overview" class="section active">
+      <h1>Overview</h1>
+      <div class="overview-cards">
+        <div class="overview-card">
+          <h3>Total Customers</h3>
+          <p>134</p>
+        </div>
+        <div class="overview-card">
+          <h3>Total Chiefs</h3>
+          <p>28</p>
+        </div>
+        <div class="overview-card">
+          <h3>Total Orders</h3>
+          <p>210</p>
+        </div>
+        <div class="overview-card">
+          <h3>Total Complaints</h3>
+          <p>5</p>
+        </div>
+      </div>
+
+      <!-- Latest 5 Orders -->
+      <div class="overview-section">
+        <h2>Latest 5 Orders</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Dish</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>205</td>
+              <td>Omar A.</td>
+              <td>Spaghetti</td>
+              <td>2025-04-21</td>
+            </tr>
+            <tr>
+              <td>204</td>
+              <td>Salma H.</td>
+              <td>Mansaf</td>
+              <td>2025-04-21</td>
+            </tr>
+            <tr>
+              <td>203</td>
+              <td>Ali K.</td>
+              <td>Pizza</td>
+              <td>2025-04-20</td>
+            </tr>
+            <tr>
+              <td>202</td>
+              <td>Huda M.</td>
+              <td>Kebab</td>
+              <td>2025-04-20</td>
+            </tr>
+            <tr>
+              <td>201</td>
+              <td>Yousef N.</td>
+              <td>Fatteh</td>
+              <td>2025-04-19</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Newest 3 Customers -->
+      <div class="overview-section">
+        <h2>Newest 3 Customers</h2>
+        <ul class="overview-list">
+          <li><strong>Aya Z.</strong> - aya@example.com - Joined: 2025-04-20</li>
+          <li><strong>Majd R.</strong> - majd@example.com - Joined: 2025-04-18</li>
+          <li><strong>Sami H.</strong> - sami@example.com - Joined: 2025-04-16</li>
+        </ul>
+      </div>
+
+      <!-- Newest 3 Chiefs -->
+      <div class="overview-section">
+        <h2>Newest 3 Chiefs</h2>
+        <ul class="overview-list">
+          <li><strong>Rami F.</strong> - rami@example.com - Specialty: Grills</li>
+          <li><strong>Noura T.</strong> - noura@example.com - Specialty: Salads</li>
+          <li><strong>Issa D.</strong> - issa@example.com - Specialty: Pastries</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Customers Section -->
+    <div id="customers" class="section">
+      <h1>Customers</h1>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Joined</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="customer-table-body">
+          <tr>
+            <td>1</td>
+            <td>Ahmed Ali</td>
+            <td>ahmed@example.com</td>
+            <td>2024-03-15</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Lina Khatib</td>
+            <td>lina@example.com</td>
+            <td>2024-03-20</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Customers Section -->
+    <div id="customers" class="section">
+      <h1>Customers</h1>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Joined</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="customer-table-body">
+          <tr>
+            <td>1</td>
+            <td>Ahmed Ali</td>
+            <td>ahmed@example.com</td>
+            <td>2024-03-15</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Lina Khatib</td>
+            <td>lina@example.com</td>
+            <td>2024-03-20</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Chiefs Section -->
+    <div id="chiefs" class="section">
+      <h1>Chiefs</h1>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Email</th>
+            <th>Joined</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="chief-table-body">
+          <tr>
+            <td>1</td>
+            <td>Mohammad Salameh</td>
+            <td>Italian Cuisine</td>
+            <td>m.salameh@example.com</td>
+            <td>2024-01-12</td>
+            <td>
+              <button class="chief-edit-btn">Edit</button>
+              <button class="chief-delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Sara Naser</td>
+            <td>Desserts</td>
+            <td>s.naser@example.com</td>
+            <td>2024-02-03</td>
+            <td>
+              <button class="chief-edit-btn">Edit</button>
+              <button class="chief-delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="orders" class="section"><h1>Orders</h1></div>
+    <div id="ratings" class="section"><h1>Ratings</h1></div>
+    <div id="complaints" class="section"><h1>Complaints</h1></div>
+  </div>
+
+  <script src="dashboard JS.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>طلباتي السابقة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="previous-orders.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- الهيدر -->
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="#" class="logo d-flex align-items-center">
+                <h1 class="sitename m-0">طلباتي السابقة</h1>
+            </a>
+            <nav class="navbar navbar-expand-lg">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.php">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../chefAndMeal/chefs.php"><i class="fas fa-utensils me-1"></i> قائمة الطعام</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">الطلبات السابقة</h2>
+
+        <!-- إضافة اختيارات لتصفية الطلبات -->
+        <div class="container mt-4 mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="statusFilter">اختر الحالة:</label>
+                    <select id="statusFilter" class="form-select">
+                        <option value="all">الكل</option>
+                        <option value="completed">مكتمل</option>
+                        <option value="pending">قيد المعالجة</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="dateFilter">اختر تاريخ:</label>
+                    <input type="date" id="dateFilter" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- عرض الطلبات -->
+        <div id="ordersContainer" class="row">
+            <!-- الطلبات ستظهر هنا عبر السكربت -->
+        </div>
+    </div>
+
+    <!-- السكربتات -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="previous-orders.js"></script>
+</body>
+</html>

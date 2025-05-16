@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="signup.css">
+    <title>لقمة هنية</title>
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check for both login and sign-up errors
+    const loginError = localStorage.getItem('loginError');
+    const signupError = localStorage.getItem('signupError');
+    
+    // Determine which error to display
+    const errorMessage = loginError || signupError;
+    
+    if (errorMessage) {
+        const errorBox = document.getElementById('error-message');
+        
+        // Set error message
+        errorBox.textContent = errorMessage;
+        errorBox.style.display = 'block';
+        
+        // Fade in
+        setTimeout(() => errorBox.style.opacity = '1', 10);
+        
+        // Auto-dismiss after 5 seconds
+        setTimeout(() => {
+            errorBox.style.opacity = '0';
+            setTimeout(() => errorBox.style.display = 'none', 300);
+        }, 5000);
+        
+        // Clear storage (both possible errors)
+        localStorage.removeItem('loginError');
+        localStorage.removeItem('signupError');
+        
+        // Optional: Manual close on click
+        errorBox.addEventListener('click', () => {
+            errorBox.style.opacity = '0';
+            setTimeout(() => errorBox.style.display = 'none', 300);
+        });
+    }
+  });
+    </script>
+  
+<body>
+    
+    <header class="header">
+        <div class="logo">
+          <h1>لقمة <span>هنية</span></h1>
+        </div>
+        <nav class="navmenu">
+          <ul>
+            <li><a href="/LUQMA/chefAndMeal/chefs.php">الطهاة</a></li>
+           <li><a href="../index.php">الرئيسية</a></li>
+            <li><a href="/luqma/login/user.html" class="active">تسجيل الدخول</a></li>
+           
+          </ul>
+        </nav>
+      </header>
+      
+    <main>
+        <div class="container" id="container">
+            <!-- Sign Up Form -->
+            <div class="form-container sign-up">
+              <form id="signup-form" method="POST" action="PHP/chef_signup.php">
+                <h2> إنشاء حساب جديد كطاه</h2>
+                    
+                    <label for="signup-name">الاسم</label>
+                    <input type="text" id="signup-name" name="name" placeholder="الاسم" required>
+
+                    <label for="signup-phone">رقم الهاتف</label>
+                    <input type="tel" id="signup-phone" name="phone" placeholder="أدخل رقم الهاتف (10 أرقام)" required pattern="\d{10}" maxlength="10">
+                    
+                    <label for="signup-email">البريد الإلكتروني</label>
+                    <input type="email" id="signup-email" name="email" placeholder="البريد الإلكتروني" required>
+    
+                    <label for="signup-password">  كلمة السر </label>
+                    <div class="password-field">
+                      <input type="password" id="signup-password" name="password" placeholder="كلمة السر" required minlength="8">
+                      <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fa-solid fa-eye-slash" id="toggleIcon"></i>
+                      </span>
+                    </div>
+    
+                    <button type="submit">إنشاء حساب </button>
+                </form>
+            </div>
+    
+            <!-- Sign In Form -->
+            <div class="form-container sign-in">
+              <form method="POST" action="PHP/chef_login.php">
+
+                <h2>تسجيل الدخول كطاه</h2>
+              
+              
+                <label for="signin-email">البريد الإلكتروني</label>
+                <input type="email" id="signin-email" name="email" placeholder="البريد الإلكتروني" required>
+              
+                <label for="signin-password">  كلمة السر </label>
+                <div class="password-field">
+                  <input type="password" id="signin-password" name="password" placeholder="كلمة السر" required minlength="8">
+                  <span class="toggle-password" onclick="toggleSigninPasswordVisibility()">
+                    <i class="fa-solid fa-eye-slash" id="toggleSigninIcon"></i>
+                  </span>
+                </div>
+          
+                <a href="/luqma/login/php/forgot_password/forgot-password.php">نسيت كلمة السر؟</a>
+
+                <button type="submit">تسجيل الدخول</button>
+              </form>
+              
+            </div>
+    
+            <!-- Toggle Panel -->
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>أهلاً بعودتك</h1>
+                        <p>أدخل بياناتك الشخصية للاستفادة من جميع ميزات الموقع</p>
+                        <button class="hidden" id="login">تسجيل الدخول</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>مرحبًا بكم في لقمة هنيّة </h1>
+                         <p>سجل بياناتك للبدء في رحلتك معنا</p>
+                        <button class="hidden" id="register">إنشاء حساب جديد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+    </body>
+  
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section contact-info">
+            <h3>العنوان</h3>
+            <p>الأردن</p>
+            <p>عمان</p>
+          </div>
+      
+          <div class="footer-section contact-methods">
+            <h3>تواصل</h3>
+            <p><strong>الهاتف:</strong> +962 55 5889 5589</p>
+            <p><strong>البريد:</strong> info@example.com</p>
+          </div>
+      
+          <div class="footer-section social">
+            <h3>تابعنا</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2025 جميع الحقوق محفوظة | <span>لقمة هنية</span></p>
+          <p>Designed by <strong>Group 3</strong></p>
+        </div>
+      </footer>
+      
+
+    </body>
+    <div class="reset-password-modal" id="resetPasswordModal">
+      <div class="reset-password-box">
+        <h3>إعادة تعيين كلمة السر</h3>
+        <p>أدخل بريدك الإلكتروني وسنرسل لك رابط لإعادة تعيين كلمة السر</p>
+        <input type="email" id="resetEmail" placeholder="أدخل بريدك الإلكتروني" required>
+        <button onclick="sendResetEmail()">إرسال</button>
+        <button class="close-btn" onclick="closeResetModal()">إغلاق</button>
+        <p id="resetMessage"></p>
+      </div>
+    </div>
+   
+
+    <div id="error-message" class="error-box" style="
+display: none;
+position: fixed;
+top: 100px;
+left: 50%;
+transform: translateX(-50%);
+background: #ffebee;
+color: #d32f2f;
+padding: 12px 24px;
+border-radius: 4px;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+border-left: 4px solid #d32f2f;
+z-index: 1000;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+"></div>
+
+    <script src="signup.js"></script>
+
+
+</body>
+
+</html>

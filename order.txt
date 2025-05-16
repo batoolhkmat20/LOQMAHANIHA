@@ -1,0 +1,705 @@
+1. الطلبات الحالية:
+تحسين طريقة عرض الطلبات:
+
+إضافة زر لتعديل الكمية لكل منتج.
+
+تعديل طريقة تحديث الإجمالي عند تغيير الكمية.
+
+إعادة حساب المجموع الكلي بشكل ديناميكي عند كل تغيير في الكمية.
+
+حذف العنصر من الطلب باستخدام زر "حذف".
+
+تحسين العرض المرئي:
+
+تحسين مظهر الجدول باستخدام ألوان متناغمة.
+
+إضافة خط فاصل بين كل عنصر في الجدول لتحسين مظهره.
+
+تفاعل المستخدم:
+
+التأكد من عرض السعر الإجمالي بشكل واضح في الأسفل.
+
+تغيير الألوان وأزرار التفاعل مثل زر "تأكيد الطلب".
+
+2. الطلبات السابقة:
+إضافة حقل بحث:
+
+إضافة حقل بحث داخل قسم "الطلبات السابقة" لتصفية الطلبات السابقة حسب اسم الطعام أو تاريخ الطلب.
+
+عرض بيانات الطلبات السابقة بشكل منظم:
+
+عرض كل طلب سابق في بطاقة تحتوي على تفاصيل الطلب مثل اسم الطعام، الكمية، السعر الكلي، والتاريخ.
+
+إضافة أزرار لحذف أو إعادة الطلب عند الضغط عليها.
+
+تحسين المظهر العام للطلبات السابقة:
+
+استخدام تنسيقات أفضل مثل الظلال والمربعات المنفصلة لكل طلب لسهولة التمييز.
+
+حذف الطلبات السابقة:
+
+إضافة وظيفة لحذف الطلبات السابقة عند الضغط على زر الحذف مع تأكيد للمستخدم.
+
+3. تحسين المظهر العام للصفحة:
+تعديل الألوان والتنسيقات:
+
+تحسين الألوان لجعل الصفحة أكثر تنسيقاً وأقل ازدحاماً.
+
+استخدام ألوان متناسقة مع تصميم الصفحة.
+
+تعديل في تنسيق الجداول:
+
+تحسين تنسيق الأعمدة والتأكد من أن كل عنصر يحتوي على مسافات متساوية.
+
+إضافة فواصل بصرية بين الصفوف لتمييز العناصر بسهولة.
+
+
+
+
+
+--------------------------------------
+----------------------------------------
+------------------------------------------
+--------------------------------------------
+----------------------------------------------
+----------------------------------------------------
+هذه هي الاكواد : order.html ---> <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>نموذج طلب الطعام</title>
+  <!-- رابط لملف Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+  <header class="header bg-light py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+  
+      <!-- شريط التنقل -->
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">لقمة هنيّة</h1>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#home">الصفحة الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">قائمة الطعام</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#orders">الطلبات السابقة</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- حساب المستخدم / تسجيل الدخول -->
+      <div class="user-actions">
+        <a href="#login" class="btn btn-outline-primary">تسجيل الدخول</a>
+      </div>
+  
+      <!-- سلة التسوق -->
+      <a href="#cart" class="cart-icon d-flex align-items-center">
+        <i class="fas fa-shopping-cart me-2"></i> سلة التسوق (0)
+      </a>
+    </div>
+  </header>
+  
+  <div class="container mt-5">
+  
+    <h2 class="text-center mb-4">الوجبات المختارة</h2>
+
+    <!-- الجدول لعرض الطلبات -->
+    <table id="orderTable" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>اسم الطعام</th>
+          <th>الكمية</th>
+          <th>تفاصيل السعر</th>
+          <th>إجمالي الطلب</th>
+          <th>إجراء</th>
+        </tr>
+      </thead>
+      <tbody id="orderDetails"></tbody>
+    </table>
+
+    <div class="fw-bold text-end mt-3">المجموع الكلي: <span id="orderTotal">٠٫٠٠</span> د.أ</div>
+
+    <!-- زر تأكيد الطلب -->
+    <button class="btn btn-success mt-3" id="confirmOrderBtn">تأكيد الطلب</button>
+
+    <!-- عرض الطلبات السابقة -->
+    <h3 class="mt-4">الطلبات السابقة</h3>
+    <div id="previousOrderList" class="mt-2">
+      <!-- سيتم عرض الطلبات السابقة هنا -->
+    </div>
+  </div>
+
+  <!-- رابط لملف JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="order.js"></script>
+</body>
+</html>                                                                                                                                                               order.css ----- > body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #ce1212;
+}
+
+/* تخصيص الجدول */
+table {
+  width: 100%;
+  border-radius: 8px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  background-color: #ce1212;
+  color: black;
+}
+
+table td {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #cc0014;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.text-end {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#previousOrderList {
+  margin-top: 15px;
+}
+
+.order-item {
+  background-color: #f8f8f8;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+h3 {
+  color: #cc0014;
+}
+
+.order-card {
+  background-color: #ffffff;
+  border-right: 5px solid #cc0014;
+  transition: 0.3s;
+}
+
+.order-card:hover {
+  box-shadow: 0 0 10px rgba(204, 0, 20, 0.3);
+}
+
+.order-card h5 {
+  color: #cc0014;
+  font-weight: bold;
+}
+
+.more-details-btn {
+  background-color: #ffbb33;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.more-details-btn:hover {
+  background-color: #ff9a00;
+}
+
+
+
+
+
+
+
+
+
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "Amatic SC", sans-serif;
+  --nav-font: "Inter", sans-serif;
+  --background-color: #ffffff;
+  --default-color: #212529;
+  --heading-color: #37373f;
+  --accent-color: #ce1212;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 997;
+  font-family: var(--default-font);
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+  font-family: var(--default-font);
+}
+
+.header .logo span {
+  color: var(--accent-color);
+  font-size: 36px;
+}
+
+.header .navbar-nav .nav-item .nav-link {
+  color: var(--default-color);
+  font-family: var(--nav-font);
+  font-size: 16px;
+}
+
+.header .navbar-nav .nav-item .nav-link:hover {
+  color: var(--accent-color);
+}
+
+.header .btn-outline-primary {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transition: 0.3s;
+}
+
+.header .btn-outline-primary:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.header .cart-icon {
+  font-size: 20px;
+  color: var(--default-color);
+  text-decoration: none;
+}
+
+.header .cart-icon:hover {
+  color: var(--accent-color);
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .navbar-nav {
+    order: 2;
+  }
+
+  .header .user-actions {
+    order: 3;
+  }
+
+  .header .cart-icon {
+    order: 4;
+  }
+}                                                                                                                                                                       order.js -----> // جلب البيانات من localStorage (الطلبات المخزنة)
+const orderDetails = JSON.parse(localStorage.getItem('selectedMeals')) || [];
+const tableBody = document.getElementById('orderDetails');
+const totalSpan = document.getElementById('orderTotal');
+const confirmOrderBtn = document.getElementById('confirmOrderBtn');
+let total = 0;
+
+// عرض الطلبات في الجدول
+function displayOrders() {
+  tableBody.innerHTML = ''; // مسح محتويات الجدول الحالي
+  total = 0; // إعادة تعيين إجمالي الطلب
+
+  orderDetails.forEach((meal, index) => {
+    const row = document.createElement('tr');
+    row.classList.add('table-row', 'table-light'); // إضافة فئة CSS لتمييز الصفوف
+
+    // عمود اسم الطعام
+    const nameCell = document.createElement('td');
+    nameCell.textContent = meal.name;
+
+    // عمود الكمية
+    const qtyCell = document.createElement('td');
+    const qtyInput = document.createElement('input');
+    qtyInput.type = 'number';
+    qtyInput.value = meal.quantity || 1; // تعيين القيمة الافتراضية إلى 1
+    qtyInput.min = 1;
+    qtyInput.classList.add('form-control', 'text-center');
+    qtyInput.addEventListener('input', () => updateTotal(index, qtyInput.value));
+    qtyCell.appendChild(qtyInput);
+
+    // عمود السعر
+    const priceCell = document.createElement('td');
+    priceCell.textContent = `${meal.price} د.أ`;
+
+    // عمود إجمالي السعر
+    const totalCell = document.createElement('td');
+    const totalPrice = (meal.price * meal.quantity).toFixed(2);
+    totalCell.textContent = `${totalPrice} د.أ`;
+
+    // عمود الحذف
+    const actionCell = document.createElement('td');
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'حذف';
+    deleteButton.classList.add('btn', 'btn-danger', 'btn-sm'); // إضافة فئة Bootstrap للأزرار
+    deleteButton.addEventListener('click', () => deleteItem(index));
+    actionCell.appendChild(deleteButton);
+
+    row.appendChild(nameCell);
+    row.appendChild(qtyCell);
+    row.appendChild(priceCell);
+    row.appendChild(totalCell);
+    row.appendChild(actionCell);
+
+    tableBody.appendChild(row);
+    total += meal.price * meal.quantity;
+  });
+
+  updateTotalDisplay(); // تحديث عرض المجموع الكلي
+}
+
+// تحديث إجمالي الطلب عند تغيير الكمية
+function updateTotal(index, qty) {
+  const meal = orderDetails[index];
+  meal.quantity = parseInt(qty); // تحديث الكمية الجديدة
+  localStorage.setItem('selectedMeals', JSON.stringify(orderDetails)); // تخزين البيانات المحدثة
+  displayOrders(); // إعادة عرض الطلبات بعد التحديث
+}
+
+// تحديث عرض السعر الكلي
+function updateTotalDisplay() {
+  total = 0;
+  orderDetails.forEach(meal => {
+    total += meal.price * meal.quantity; // حساب المجموع الكلي
+  });
+  totalSpan.textContent = total.toFixed(2); // عرض المجموع الكلي في الصفحة
+}
+
+// حذف عنصر من الطلب الحالي
+function deleteItem(index) {
+  // حذف العنصر من المصفوفة
+  orderDetails.splice(index, 1);
+  localStorage.setItem('selectedMeals', JSON.stringify(orderDetails)); // تحديث البيانات في localStorage
+  displayOrders(); // إعادة عرض الطلبات بعد التحديث
+}
+
+// تحسين الأزرار
+confirmOrderBtn.classList.add('btn', 'btn-success', 'btn-lg', 'w-100', 'mt-4'); // تنسيق زر "تأكيد الطلب"
+
+// عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  displayOrders(); // عرض الطلبات عند تحميل الصفحة
+
+  confirmOrderBtn.addEventListener('click', () => {
+    // عند النقر على زر "تأكيد الطلب"، يمكن إضافة منطق إرسال البيانات هنا
+    alert('✅ تم إرسال الطلب بنجاح!');
+    window.location.href = 'index.html'; // يمكنك تغيير هذا حسب الحاجة
+  });
+});
+// عرض الطلبات السابقة
+function displayPreviousOrders() {
+  previousOrderList.innerHTML = ''; // مسح القديم
+
+  if (previousOrders.length > 0) {
+    previousOrders.forEach((order, index) => {
+      const orderDiv = document.createElement('div');
+      orderDiv.classList.add('order-item', 'border', 'rounded', 'p-3', 'mb-3', 'shadow-sm', 'bg-light');
+
+      orderDiv.innerHTML = `
+        <p><strong>🍽️ اسم الطعام:</strong> ${order.name}</p>
+        <p><strong>🔢 الكمية:</strong> ${order.quantity}</p>
+        <p><strong>💰 السعر الكلي:</strong> ${order.totalPrice} د.أ</p>
+        <p><strong>🕒 التاريخ:</strong> ${order.date}</p>
+        <div class="d-flex gap-2">
+          <button class="btn btn-warning btn-sm" onclick="reorder(${index})">🔁 إعادة الطلب</button>
+          <button class="btn btn-outline-danger btn-sm" onclick="deletePreviousOrder(${index})">🗑️ حذف</button>
+        </div>
+      `;
+      previousOrderList.appendChild(orderDiv);
+    });
+  } else {
+    previousOrderList.innerHTML = '<p>لا توجد طلبات سابقة.</p>';
+  }
+}
+
+// حذف طلب سابق
+function deletePreviousOrder(index) {
+  if (confirm("هل أنت متأكد من حذف هذا الطلب؟")) {
+    previousOrders.splice(index, 1);
+    localStorage.setItem('previousOrders', JSON.stringify(previousOrders));
+    displayPreviousOrders();
+  }
+}
+
+// حفظ الطلب في الطلبات السابقة
+function saveOrderToPrevious() {
+  const date = new Date().toLocaleString('ar-EG');
+
+  orderDetails.forEach(meal => {
+    const orderData = {
+      name: meal.name,
+      quantity: meal.quantity,
+      totalPrice: (meal.price * meal.quantity).toFixed(2),
+      date: date
+    };
+    previousOrders.push(orderData);
+  });
+
+  localStorage.setItem('previousOrders', JSON.stringify(previousOrders));
+
+  alert('✅ تم إرسال الطلب بنجاح!');
+  window.location.href = 'index.html';
+}
+
+// إعادة الطلب
+function reorder(index) {
+  const order = previousOrders[index];
+
+  orderDetails.push({
+    name: order.name,
+    quantity: parseInt(order.quantity),
+    price: parseFloat(order.totalPrice) / parseInt(order.quantity)
+  });
+
+  localStorage.setItem('selectedMeals', JSON.stringify(orderDetails));
+  displayOrders();
+  alert('✔️ تم إضافة الطلب إلى السلة!');
+}
+
+// عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  displayOrders();
+  displayPreviousOrders();
+
+  confirmOrderBtn.addEventListener('click', saveOrderToPrevious);
+});
+ 
+
+
+
+
+
+ ---------------
+ ✅ Path الخطوات التي سنطبقها الآن:
+🧩 المرحلة 1: استكمال واجهة المستخدم – JavaScript
+🔸 الهدف: جعل صفحة order.html تشتغل بكامل وظائف الطلبات من خلال order.js.
+الخطوات التفصيلية:
+
+ عرض الطلبات المختارة من localStorage داخل #order-list.
+
+ حساب السعر الإجمالي تلقائيًا حسب الكمية × السعر.
+
+ السماح بتعديل الكمية وتحديث السعر تلقائيًا.
+
+ زر حذف الطلبات يمسح localStorage ويحدث الصفحة.
+
+ زر "تأكيد الطلب" يجمع البيانات ويرسلها إلى API.
+
+🛠️ المرحلة 2: إعداد قاعدة البيانات (MySQL)
+🔸 الهدف: تجهيز الجداول اللازمة لتخزين الطلبات.
+الخطوات التفصيلية:
+
+ إنشاء قاعدة بيانات luqma_orders.
+
+ إنشاء جدول orders.
+
+ إنشاء جدول order_items.
+
+ (اختياري الآن) جدول users إن احتجناه لاحقًا.
+
+🌐 المرحلة 3: إنشاء واجهة API لحفظ الطلب
+🔸 الهدف: استقبال الطلب من الواجهة الأمامية وحفظه في قاعدة البيانات.
+باستخدام PHP (سهل وسريع):
+
+ إنشاء ملف save_order.php.
+
+ استقبال بيانات POST بصيغة JSON.
+
+ إدخال الطلب في جدول orders.
+
+ إدخال الوجبات في جدول order_items.
+
+🔄 المرحلة 4: ربط الواجهة الخلفية بالأمامية
+🔸 الهدف: عند تأكيد الطلب، يتم إرساله من order.js إلى save_order.php.
+الخطوات التفصيلية:
+
+ بناء بيانات الطلب بصيغة JSON.
+
+ استخدام fetch() لإرسال الطلب.
+
+ عرض رسالة "تم الطلب بنجاح" أو خطأ.
+
+✨ المخرجات المتوقعة بعد تنفيذ هذا المسار:
+✅ واجهة تعمل بالكامل (عرض وجبات – حذف – تعديل كميات).
+
+✅ طلبات تحفظ فعليًا في قاعدة البيانات.
+
+✅ كل طلب يحتوي على معلومات الوجبات والسعر الإجمالي.
+
+
+
+
+
+---------------------------
+لتكملة صفحة الطلب (order.html) لمشروعك "لقمة هنّية"، إليك الخطة المتكاملة التي يمكن اتباعها خطوة بخطوة. هذه الخطوات تغطي جميع الجوانب من الواجهة الأمامية (HTML و CSS و JavaScript) إلى الواجهة الخلفية (التعامل مع البيانات في الخادم وقاعدة البيانات).
+
+1. مراجعة وتحليل الصفحة الحالية:
+المحتوى الحالي للصفحة:
+
+تأكد من أن الصفحة تعرض الوجبات المحددة وتسمح للمستخدم بتعديل الكمية.
+
+قم بمراجعة جزء "إجمالي السعر" و"التخفيضات" وتأكد من أنه يتم حسابها بشكل صحيح عند تعديل الكميات.
+
+المحتوى المطلوب إضافته:
+
+إضافة زر "تأكيد الطلب" في أسفل الصفحة.
+
+إضافة عرض للسعر النهائي مع خيارات الدفع.
+
+إضافة زر "إعادة الطلب" و "حذف" لكل وجبة موجودة في السجل.
+
+2. إنشاء الواجهة الأمامية (HTML + CSS + JavaScript):
+HTML:
+
+هيكل الجدول أو قائمة الوجبات.
+
+حقول إدخال لعدد الوجبات مع أزرار لزيادة وتقليص الكمية.
+
+قسم لعرض إجمالي السعر بعد الحساب.
+
+إضافة أزرار "إعادة الطلب" و "حذف" بجانب كل وجبة في السجل.
+
+زر "تأكيد الطلب" الذي يقوم بتحويل المستخدم إلى صفحة الدفع.
+
+CSS:
+
+تصميم الأزرار لتكون بارزة وسهلة الاستخدام.
+
+تنسيق قائمة الوجبات بطريقة جذابة وواضحة.
+
+تخصيص الألوان والخطوط لتتناسب مع التصميم العام للصفحة.
+
+JavaScript:
+
+كتابة سكربت لحساب السعر الإجمالي بناءً على الكمية.
+
+التعامل مع الأحداث (مثل زيادة الكمية، تقليص الكمية).
+
+استخدام localStorage لحفظ البيانات عبر الجلسات المختلفة للمستخدم.
+
+تفعيل الأزرار مثل "حذف" و "إعادة الطلب".
+
+إرسال البيانات إلى الخادم (إذا لزم الأمر) عبر AJAX أو إرسالها إلى الصفحة التالية (مثل صفحة الدفع).
+
+3. الربط مع قاعدة البيانات (Backend - PHP/MySQL):
+التعامل مع البيانات المرسلة:
+
+عند تأكيد الطلب، قم بربط البيانات المرسلة (الوجبات، الكميات، السعر) مع قاعدة البيانات.
+
+حفظ بيانات الطلب (ID العميل، ID الوجبة، الكمية، السعر، التاريخ).
+
+التعامل مع سجلات الطلبات السابقة:
+
+عرض السجلات السابقة للعميل في الصفحة (تاريخ الطلب، الحالة).
+
+إمكانية حذف أو إعادة طلب الوجبات السابقة.
+
+4. إضافة وظائف الدفع:
+بعد تأكيد الطلب، ابدأ بتوجيه المستخدم إلى صفحة الدفع.
+
+إضافة خيارات الدفع مثل: الدفع عند الاستلام، الدفع عبر الإنترنت (إذا كنت تخطط لهذه الخدمة).
+
+5. اختبار الوظائف والتأكد من التفاعل السليم:
+تأكد من أن جميع الأزرار تعمل كما هو متوقع.
+
+اختبر تحديث الكميات وحساب الأسعار بشكل دقيق.
+
+تأكد من أن السجلات تُحفظ في localStorage وتُسترجع بشكل صحيح.
+
+6. مراجعة شاملة (اختبار الاستخدام):
+قم بالتحقق من التنقل بين الصفحات بشكل سلس.
+
+اختبر وظائف "إعادة الطلب" و "حذف" في السجل.
+
+تحقق من أن عملية الدفع تعمل بشكل صحيح في جميع السيناريوهات.
+
+7. الانتقال إلى تحسين الصفحة:
+تحسين سرعة تحميل الصفحة.
+
+التأكد من أن الواجهة متجاوبة على جميع الأجهزة (موبايل، تابلت، حاسوب).
+
+تحسين أوقات استجابة الخادم لطلبات الدفع.
+
